@@ -1,0 +1,17 @@
+@startuml
+|User|
+start
+    :visit site;
+    repeat :login in;
+    backward :unvalid username;
+    repeat while(Valid?) is (No) not (Yes)
+    :clicking on hero page;
+|system|
+    :taking information from database;
+    :showing heropage;
+|User|
+    :Logout;
+end 
+@enduml
+
+

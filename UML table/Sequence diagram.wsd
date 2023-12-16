@@ -1,0 +1,23 @@
+@startuml
+
+actor User 
+participant "Main Page" as main
+participant "Hero Page" as hero
+participant Backend as back
+database Database as db
+
+activate User
+User -> main: Visit site
+activate main
+main -> User: Showing main page
+User -> main: click on hero page 
+main -> hero: going to hero page
+deactivate main
+activate hero
+hero -> back: request for information from database
+db -> back: take information 
+back -> hero: give information 
+hero -> User: show hero page 
+deactivate hero
+deactivate User
+@enduml

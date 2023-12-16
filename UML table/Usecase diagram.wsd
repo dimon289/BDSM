@@ -1,0 +1,26 @@
+@startuml
+skinparam actorStyle awesome
+
+left to right direction
+
+actor User
+package Site{
+   usecase "Surf the site" as us1
+   usecase "Register on site" as us2
+   usecase "Add new information" as us3
+}
+package Admins{
+    actor Admin
+    actor "DB Admin" as dba
+}
+package Database{
+    usecase "update database" as us4
+}
+
+User --> us1
+User --> us2
+dba --> us4
+Admin -> us3
+us4 -> us3
+
+@enduml

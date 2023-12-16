@@ -1,0 +1,28 @@
+@startuml
+
+class User{
+    +name: string
+    +email: string 
+    -password
+    +verifyLogin():bool
+}
+class admin{
+    +name: string
+    +age: string
+    +accseses 
+    +update() 
+    +add()
+}
+
+abstract information{
+    +information 
+}
+class Site_Info{
+    +information
+    +Length: int
+}
+information <|-- Site_Info
+Site_Info ..|> User
+admin ..|> Site_Info:add\update info
+
+@enduml
