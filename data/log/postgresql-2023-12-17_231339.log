@@ -1,0 +1,11 @@
+2023-12-17 23:13:39.483 EET [5952] LOG:  database system was shut down at 2023-12-17 23:13:08 EET
+2023-12-17 23:18:39.388 EET [7160] LOG:  checkpoint starting: time
+2023-12-17 23:18:43.166 EET [7160] LOG:  checkpoint complete: wrote 37 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.731 s, sync=0.022 s, total=3.779 s; sync files=8, longest=0.005 s, average=0.003 s; distance=170 kB, estimate=170 kB; lsn=0/15F4738, redo lsn=0/15F4700
+2023-12-17 23:21:04.558 EET [3888] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2023-12-17 23:38:39.208 EET [7160] LOG:  checkpoint starting: time
+2023-12-17 23:38:39.760 EET [7160] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.533 s, sync=0.009 s, total=0.553 s; sync files=6, longest=0.002 s, average=0.002 s; distance=3 kB, estimate=153 kB; lsn=0/15F5558, redo lsn=0/15F5520
+2023-12-17 23:43:39.760 EET [7160] LOG:  checkpoint starting: time
+2023-12-17 23:43:39.894 EET [7160] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.117 s, sync=0.005 s, total=0.134 s; sync files=2, longest=0.003 s, average=0.003 s; distance=2 kB, estimate=138 kB; lsn=0/15F5F78, redo lsn=0/15F5F40
+2023-12-17 23:48:39.895 EET [7160] LOG:  checkpoint starting: time
+2023-12-17 23:50:24.383 EET [7160] LOG:  checkpoint complete: wrote 973 buffers (5.9%); 0 WAL file(s) added, 0 removed, 0 recycled; write=104.164 s, sync=0.312 s, total=104.489 s; sync files=301, longest=0.004 s, average=0.002 s; distance=4550 kB, estimate=4550 kB; lsn=0/1A679C0, redo lsn=0/1A67988
