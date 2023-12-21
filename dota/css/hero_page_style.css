@@ -167,7 +167,6 @@ header {
     margin-bottom: 20px;
     position: relative;
     background-color: #121A21;
-    width: 40vw; /* Set your desired width here */
     margin:  20px; /* Center the block */
   }
 
@@ -305,4 +304,18 @@ header {
   }
   .aganim_box div{
     background-color:#505050
+  }
+  .mana_n_colldoun{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    width: fit-content;
+    margin: 0;
+    color: #B5B5B5;
+  }
+  .mana_n_colldoun img{
+    border: none;
+    width: 10px;
+    height: 10px;
   }
