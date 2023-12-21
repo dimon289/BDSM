@@ -61,3 +61,49 @@
 	
 2023-12-21 01:20:55.610 EET [4760] LOG:  checkpoint starting: time
 2023-12-21 01:21:02.539 EET [4760] LOG:  checkpoint complete: wrote 63 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.830 s, sync=0.076 s, total=6.929 s; sync files=51, longest=0.005 s, average=0.002 s; distance=263 kB, estimate=263 kB; lsn=0/1C688B0, redo lsn=0/1C68840
+2023-12-21 01:35:55.576 EET [4760] LOG:  checkpoint starting: time
+2023-12-21 01:35:57.588 EET [4760] LOG:  checkpoint complete: wrote 18 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.970 s, sync=0.024 s, total=2.013 s; sync files=13, longest=0.004 s, average=0.002 s; distance=16 kB, estimate=238 kB; lsn=0/1C6CC10, redo lsn=0/1C6CBD8
+2023-12-21 02:00:27.010 EET [12544] ERROR:  cannot drop table dota2_heroes because other objects depend on it
+2023-12-21 02:00:27.010 EET [12544] DETAIL:  constraint hero_abilities_hero_id_fkey on table hero_abilities depends on table dota2_heroes
+2023-12-21 02:00:27.010 EET [12544] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2023-12-21 02:00:27.010 EET [12544] STATEMENT:  DROP TABLE IF EXISTS public.dota2_heroes;
+2023-12-21 02:00:55.616 EET [4760] LOG:  checkpoint starting: time
+2023-12-21 02:00:57.471 EET [4760] LOG:  checkpoint complete: wrote 19 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.818 s, sync=0.022 s, total=1.855 s; sync files=15, longest=0.003 s, average=0.002 s; distance=67 kB, estimate=221 kB; lsn=0/1C80EE8, redo lsn=0/1C7DB70
+2023-12-21 02:01:01.118 EET [13856] ERROR:  syntax error at or near "." at character 348
+2023-12-21 02:01:01.118 EET [13856] STATEMENT:  CREATE TABLE dota2_heroes (
+	    hero_id SERIAL PRIMARY KEY,
+	    hero_name VARCHAR(255) NOT NULL,
+		hero_photo_url VARCHAR(255),
+	    hero_description TEXT,
+	    hero_story TEXT,
+	    hero_voice_lines VARCHAR(255)
+	);
+	
+	CREATE DOMAIN AbilityTarget AS TEXT CHECK (
+	  VALUE IN ('пасивна', 'вороже створіння', 'союзне створіння', 'націлена на точку', 'аура'. 'перемикаючась', 'векторно направлена на створіння', 'ненаправлена', 'направлена на створіння або на точку', 'направлена на створіння на точку', 'автоматична')
+	);
+	
+	CREATE DOMAIN DamageType AS TEXT CHECK (
+	  VALUE IN ('магічна', 'фізична', 'абсолютна')
+	);
+	
+	CREATE TABLE hero_abilities (
+	    ability_id SERIAL PRIMARY KEY,
+	    hero_id INT REFERENCES dota2_heroes(hero_id),
+	    ability_name VARCHAR(255) NOT NULL,
+		ability_photo_url VARCHAR(255),
+		mana_cost VARCHAR(32),
+	    target_type AbilityTarget,
+	    damage_type DamageType,
+	    aganim_shard_buff TEXT,
+	    damage VARCHAR(32),
+	    duration VARCHAR(32),
+	    healing VARCHAR(32),
+	    is_active BOOLEAN,
+	    reduce_value VARCHAR(32)
+	);
+	
+2023-12-21 02:05:55.472 EET [4760] LOG:  checkpoint starting: time
+2023-12-21 02:05:55.926 EET [4760] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.421 s, sync=0.016 s, total=0.455 s; sync files=5, longest=0.010 s, average=0.004 s; distance=15 kB, estimate=201 kB; lsn=0/1C817D8, redo lsn=0/1C817A0
+2023-12-21 02:10:55.931 EET [4760] LOG:  checkpoint starting: time
+2023-12-21 02:11:00.829 EET [4760] LOG:  checkpoint complete: wrote 45 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.816 s, sync=0.062 s, total=4.899 s; sync files=44, longest=0.003 s, average=0.002 s; distance=208 kB, estimate=208 kB; lsn=0/1CB5950, redo lsn=0/1CB5918
